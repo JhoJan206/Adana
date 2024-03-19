@@ -263,5 +263,5 @@ body {
 
 .open .message {
   display: block; /* Display when envelope is open */
-  font-size: 20px;
+  font-size: 17px;
 }
