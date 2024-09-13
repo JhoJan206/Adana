@@ -1,27 +1,22 @@
 body {
-  background-color: #8686862a;
+  background-color: #385dff;
 }
 .menu {
   display: flex;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center; /* Centrado vertical */
-  height: 100vh; /* Ajusta la altura según sea necesario */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-
 .menu a {
-  /* Estilos adicionales para los enlaces si es necesario */
   text-decoration: none;
-  display: flex;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center; /* Centrado vertical */
-  margin: 0 10px; /* Margen entre los enlaces */
-  background-color: rgb(110, 110, 246);
-  padding: 10px;
+  color: rgb(0, 0, 0);
+  margin: 10px;
+  background-color: rgb(255, 60, 60);
+  padding: 15px;
   border: solid 2px #000000 ;
   border-radius: 15px;
   width: 100px;
 }
-
 .menu a:hover{
   background-color: rgb(65, 65, 252);
   transform: scale(1.2);
