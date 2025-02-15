@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&lt;UwU3</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
+    body {
+      display: flex;
+      box-sizing: border-box;
+      width: 100vw;
+      padding: 2rem 1rem;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      background-color: #fff0f5;
+    }
+
+    .container {
+      margin: 0 auto;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0 0 3rem 0;
+      font-size: 3rem;
+      color: #690000;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .pointer {
+      position: relative;
+      z-index: 1;
+      margin-bottom: -1rem;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 40px solid rgb(0, 0, 0);
+    }
+
+    .roulette-wheel {
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      width: 50vw;
+      max-width: 450px;
+      height: 50vw;
+      max-height: 450px;
+      background: conic-gradient(
+      #fc7800 0 20%, /* Lauren */
+      #607540 0 40%, /* Cam */
+      teal 0 60%,    /* James */
+      #0094ff 0 80%, /* Sarah */
+      #ff0094 0 100% /* Alex */
+      );
+      border-radius: 50%;
+      transform: rotate(0deg);
+      transform-origin: 50% 50%;
+      transition: transform 2s ease-in-out 1s;
+    }
+
+    @media (max-height: 800px) {
+      .roulette-wheel {
+        width: 50vh;
+        height: 50vh;
+      }
+    }
+
+    @media (max-height: 320px) {
+      .roulette-wheel {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .roulette-wheel svg {
+      transform: rotate(18deg);
+    }
+
+    .roulette-wheel svg path {
+      transform-origin: 50% 50%;
+    }
+
+    .roulette-wheel svg text {
+      fill: white;
+      font-size: 1.5rem;
+    }
+
+    button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-top: 3rem;
+      border-radius: 4px;
+      border: 1px solid white;
+      box-shadow: none;
+      background-color: #333;
+      font-family: "Montserrat";
+      font-size: 1rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>eres muy Guapa jeje</h1>
+    <div class="pointer"></div>
+    <div id="roulette" class="roulette-wheel">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 402 402">
+        <path id="curve2" fill="none" transform="rotate(18)" d="M50,201c0-83.4,67.6-151,151-151s151,67.6,151,151"/>
+        <text width="500" text-anchor="middle">
+          <textPath startOffset="50%" xlink:href="#curve2">
+            Dulces</textPath>
+        </text>
+        <path id="curve3" fill="none" transform="rotate(90)" d="M50,201c0-83.4,67.6-151,151-151s151,67.6,151,151"/>
+        <text width="500" text-anchor="middle">
+          <textPath startOffset="50%" xlink:href="#curve3">
+            Lego</textPath>
+        </text>
+        <path id="curve4" fill="none" transform="rotate(162)" d="M50,201c0-83.4,67.6-151,151-151s151,67.6,151,151"/>
+        <text width="500" text-anchor="middle">
+          <textPath startOffset="50%" xlink:href="#curve4">
+            Depilar la cola</textPath>
+        </text>
+        <path id="curve5" fill="none" transform="rotate(234)" d="M50,201c0-83.4,67.6-151,151-151s151,67.6,151,151"/>
+        <text width="500" text-anchor="middle">
+          <textPath startOffset="50%" xlink:href="#curve5">
+            Lo que quieras</textPath>
+        </text>
+        <path id="curve6" fill="none" transform="rotate(306)" d="M50,201c0-83.4,67.6-151,151-151s151,67.6,151,151"/>
+        <text width="500" text-anchor="middle">
+          <textPath startOffset="50%" xlink:href="#curve6">
+            2L de Helado</textPath>
+        </text>
+      </svg>
+    </div>
+    <button id="roulette-trigger">Girar</button>
+  </div>
+
+  <script>
+    const rouletteWheel = document.querySelector('#roulette');
+    const rouletteTrigger = document.querySelector('#roulette-trigger');
+    var wheelRotation = 0;
+
+    function spinWheel(e) {
+      e.preventDefault();
+      // Generar un valor aleatorio entre 3 y 10 vueltas, convertido a grados
+      const randomRotation = 1080 + (Math.random() * (3600 - 1080)); // 1080 grados es el mínimo (3 vueltas), 3600 es el máximo (10 vueltas)
+      wheelRotation += randomRotation; // Sumar la rotación al valor anterior
+      rouletteWheel.setAttribute('style', 'transform: rotate(' + wheelRotation + 'deg);');
+    }
+    rouletteTrigger.addEventListener('click', spinWheel, false);
+  </script>
+
+</body>
+</html>
