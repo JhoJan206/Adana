@@ -8,35 +8,32 @@
     @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
 
     body {
-      display: flex;
-      box-sizing: border-box;
-      width: 100vw;
-      padding: 2rem 1rem;
-      font-family: "Montserrat", sans-serif;
-      text-align: center;
-      background-color: #fff0f5;
+        display: flex;
+        box-sizing: border-box;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+        background-color: #fff0f5;
     }
-
     .container {
-      margin: 0 auto;
-      align-self: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        margin: 0 auto;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-
     h1 {
       margin: 0 0 3rem 0;
       font-size: 3rem;
       color: #690000;
     }
-
     @media (max-width: 480px) {
       h1 {
         font-size: 2rem;
       }
     }
-
     .pointer {
       position: relative;
       z-index: 1;
@@ -47,7 +44,6 @@
       border-right: 15px solid transparent;
       border-top: 40px solid rgb(0, 0, 0);
     }
-
     .roulette-wheel {
       position: relative;
       overflow: hidden;
@@ -68,34 +64,28 @@
       transform-origin: 50% 50%;
       transition: transform 2s ease-in-out 1s;
     }
-
     @media (max-height: 800px) {
       .roulette-wheel {
         width: 50vh;
         height: 50vh;
       }
     }
-
     @media (max-height: 320px) {
       .roulette-wheel {
         width: 100px;
         height: 100px;
       }
     }
-
     .roulette-wheel svg {
       transform: rotate(18deg);
     }
-
     .roulette-wheel svg path {
       transform-origin: 50% 50%;
     }
-
     .roulette-wheel svg text {
       fill: white;
       font-size: 1.5rem;
     }
-
     button {
       display: inline-block;
       padding: 0.5rem 1rem;
@@ -154,9 +144,8 @@
 
     function spinWheel(e) {
       e.preventDefault();
-      // Generar un valor aleatorio entre 3 y 10 vueltas, convertido a grados
-      const randomRotation = 1080 + (Math.random() * (3600 - 1080)); // 1080 grados es el mínimo (3 vueltas), 3600 es el máximo (10 vueltas)
-      wheelRotation += randomRotation; // Sumar la rotación al valor anterior
+      const randomRotation = 1080 + (Math.random() * (3600 - 1080)); 
+      wheelRotation += randomRotation;
       rouletteWheel.setAttribute('style', 'transform: rotate(' + wheelRotation + 'deg);');
     }
     rouletteTrigger.addEventListener('click', spinWheel, false);

@@ -1,8 +1,20 @@
-body {
-  background-color: #385dff;
+:root{
+  --text: #e2e0f0;
+  --background: #0b0916;
+  --primary: #a29ddb;
+  --secondary: #2e267d;
+  --accent: #5246cf;
+  --love: #fa5252;
 }
-.menu {
+body{
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  font-family: sans-serif;
+}
+.menu{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -11,11 +23,9 @@ body {
   text-decoration: none;
   color: rgb(0, 0, 0);
   margin: 10px;
-  background-color: rgb(255, 60, 60);
-  padding: 15px;
-  border: solid 2px #000000 ;
+  background-color: var(--accent);
+  padding: 15px 50px;
   border-radius: 15px;
-  width: 100px;
 }
 .menu a:hover{
   background-color: rgb(65, 65, 252);
